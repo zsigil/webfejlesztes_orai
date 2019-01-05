@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Űrlapok készítése html-el</h1>
+	
+	<!--Kép beszúrása-->
+	<img src="kuty.jpg" width="30%"/> <!--Relatív hivatkozás-->
+	<img src="C:\Users\dorogd\Documents\Donat\kuty.jpg" height="150px"/> <!--Abszolút hiv.-->
+	<br/>
+	<img src="Kepek/cica.jpg" width="300px"/> <!-- Ez is relatív hiv.-->	
+	
+	
+	<form method="post" action="feldolgozo.php"> <!-- Űrlap címkéje--> <!-- method="post/get"-->
+		Név: <input type="text" name="nev" placeholder="Minta János"/><br/><br/>
+		E-mail: <input type="text" name="email" placeholder="email@valami.hu"/><br/><br/>
+		Jelszó: <input type="password" name="psw"/><br/><br/>
+		
+		Érdeklődési körök:<br/>
+		<input type="checkbox"/>Informatika<br/>
+		<input type="checkbox"/>Gasztronómia<br/>		
+		<input type="checkbox"/>Turizmus<br/>		
+		<input type="checkbox"/>Politika<br/>
+
+		<br/>
+		Életkora:<br/>
+		<input type="radio" name="kor"/>0-17<br/>
+		<input type="radio" name="kor"/>18-25<br/>
+		<input type="radio" name="kor"/>26-40<br/>
+		<input type="radio" name="kor"/>41-65<br/>
+		<input type="radio" name="kor"/>65-...<br/>
+		
+		<br/>
+		Születési idő: <input type="date" name="szulido"/><br/><br/>
+		
+		Kedvenc szín:
+		<select name="szinek">
+			<option value="none">Nincs kedvenc</option>
+			<option value="p">Piros</option>
+			<option value="k">Kék</option>
+			<option value="l">Lila</option>
+			<option value="t">Türkiz</option>
+		</select>
+		<br/><br/>
+		
+		Tölts fel egy képet magadról: <br/>
+		<input type="file" name="kep"/>
+		<br/><br/>
+		
+		<input type="hidden" name="id" value="23"/>
+		
+		<input type="reset" value="Törlés"/>
+		<input type="submit" value="Elküldés"/>
+	</form>
+</body>
+</html>
+
+
+
+
+
