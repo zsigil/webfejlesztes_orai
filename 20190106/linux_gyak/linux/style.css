@@ -1,0 +1,61 @@
+*{
+	
+	font-family: "Lato", sans-serif;
+}
+
+#container{
+	width: 800px;
+	margin: auto;
+}
+
+#header{
+	width: 100%;
+	color: rgba(102,102,102);
+	border: 1px solid #000;
+	text-align: center;
+	font-size: 150%;
+	
+}
+
+#left-content{
+	float: left;
+	width: 58%;
+	
+}
+
+#right-content{
+	float: right;
+	width: 38%;
+	margin-left: 20px;
+}
+/* LEFT CONTENT */
+
+.date{
+	color: #999;
+}
+
+#subheader{
+	color: rgb(204,102,0);
+}
+
+.bold{
+	
+	font-weight: bold;
+}
+
+.italic{
+	font-style: italic;
+}
+
+
+/* RIGHT CONTENT */
+
+
+#pict{
+	width: 100%;
+}
+
+#right-content img{
+	margin-top: 25px;
+	width: 100%;
+}
