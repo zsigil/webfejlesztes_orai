@@ -1,0 +1,22 @@
+hamburer;kicsi;330
+hamburger;normál;480
+sajtburger;kicsi;350
+sajtburger;normál;500
+sajtburger;XL;700
+csirkeburger;normál;400
+csirekburger;XL;800
+tanyasi burger;normál;500
+tanyasi burger;XL;800
+nagyi kedvence;normál;600
+fald fel;XXL;1200
+fogyi-kura;mini;300
+fogyi-kura;kicsi;400
+vega;kicsi;400
+vega;normál;600
+vega-mega;XL;900
+hasab burgonya;kicsi;300
+hasab burgonya;normál;500
+hasab burgonya;XL;700
+udito;kicsi;250
+udito;normal;300
+udito;nagy;400
