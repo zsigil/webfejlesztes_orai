@@ -1,0 +1,29 @@
+CREATE TABLE konyv (
+id INT PRIMARY KEY AUTO_INCREMENT,
+cim VARCHAR(50) NOT NULL,
+szerzo VARCHAR(50) NOT NULL
+);
+
+INSERT INTO konyv (cim,szerzo) VALUES ('A hold', 'Kis Éva');
+INSERT INTO konyv (cim,szerzo) VALUES ('A nap', 'Nagy István');
+INSERT INTO konyv (cim,szerzo) VALUES ('A csillagok', 'Szabó Béla');
+
+CREATE TABLE rendeles(
+id INT PRIMARY KEY AUTO_INCREMENT,
+datum datetime DEFAULT CURRENT_TIMESTAMP,
+konyvId INT REFERENCES konyv(id),
+darab INT NOT NULL,
+vevo VARCHAR(50)
+);
+
+INSERT INTO rendeles (konyvId, darab, vevo)
+VALUES (1, 1, 'Józsi');
+INSERT INTO rendeles (konyvId, darab, vevo)
+VALUES (1, 2, 'Miska');
+INSERT INTO rendeles (konyvId, darab, vevo)
+VALUES (3, 1, 'Erzsi');
+INSERT INTO rendeles (konyvId, darab, vevo)
+VALUES (2, 5, 'Benedek');
+
+
+SELECT * from rendeles inner join konyv on rendeles.konyvId=konyv.id order by vevo
