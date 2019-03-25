@@ -19,13 +19,10 @@ function Listazas($conn){
             $output .= "<input class='ml-3 btn btn-danger' type='submit' value='TÖRLÖM'>";
             $output .= "</form>";
             $output .= "</td>";
-            $output .= "</tr>";
-
-            echo $output;
-            $output = "";
-            
+            $output .= "</tr>";        
         }
             $output .= "</tbody></table>";
+            echo $output;
     }
 }
 
