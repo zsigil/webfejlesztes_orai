@@ -1,0 +1,12 @@
+body{
+background: lightblue;
+}
+
+.fejlec{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.gombok a{
+    margin-right: 10px;
+}

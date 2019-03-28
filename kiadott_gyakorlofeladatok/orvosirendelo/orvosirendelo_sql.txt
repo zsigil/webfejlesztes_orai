@@ -1,0 +1,47 @@
+CREATE TABLE beteg(
+taj varchar(9) PRIMARY KEY,
+vnev varchar(50),
+knev varchar(50),
+szulido date,
+szulhely varchar(50)
+);
+
+CREATE TABLE betegseg (
+betegseg_id int PRIMARY KEY AUTO_INCREMENT,
+betegseg_neve varchar(50)
+);
+
+CREATE TABLE vizsgalat (
+vizsgalat_id int PRIMARY KEY AUTO_INCREMENT,
+vizsgalat_datum datetime,
+vizsgalat_beteg varchar(9) REFERENCES beteg(taj),
+vizsgalat_betegseg int REFERENCES betegseg(betegseg_id)
+);
+
+INSERT into beteg (taj,vnev,knev,szulido,szulhely)
+VALUES ('123456789', 'Szabó', 'József', '1953.10.04', 'Kiskunmajsa');
+INSERT into beteg (taj,vnev,knev,szulido,szulhely)
+VALUES ('123123123', 'Kis', 'Mária', '1972.10.04', 'Pécs');
+INSERT into beteg (taj,vnev,knev,szulido,szulhely)
+VALUES ('456456456', 'Kovács', 'Lajos', '1964.10.04', 'Bugyi');
+INSERT into beteg (taj,vnev,knev,szulido,szulhely)
+VALUES ('789789789', 'Rotschild', 'Réka', '1979.10.04', 'Budapest');
+
+insert into betegseg(betegseg_neve) values ('2.típusú diabétesz');
+insert into betegseg(betegseg_neve) values ('hipertónia');
+insert into betegseg(betegseg_neve) values ('rheumatoid arthritis');
+insert into betegseg(betegseg_neve) values ('1.típusú diabétesz');
+
+insert into vizsgalat(vizsgalat_datum, vizsgalat_beteg, vizsgalat_betegseg) VALUES
+('2019.02.04', '123456789', 1);
+insert into vizsgalat(vizsgalat_datum, vizsgalat_beteg, vizsgalat_betegseg) VALUES
+('2019.03.04', '123456789', 2);
+insert into vizsgalat(vizsgalat_datum, vizsgalat_beteg, vizsgalat_betegseg) VALUES
+('2019.03.10', '123456789', 3);
+insert into vizsgalat(vizsgalat_datum, vizsgalat_beteg, vizsgalat_betegseg) VALUES
+('2019.03.04', '123123123', 3);
+
+
+SELECT betegseg_neve FROM
+vizsgalat inner join betegseg on vizsgalat.vizsgalat_betegseg=betegseg.betegseg_id
+where vizsgalat_beteg LIKE '123123123';
