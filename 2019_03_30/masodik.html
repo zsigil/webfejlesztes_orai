@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function hatter(szin){
+		document.bgColor = szin;
+	}
+	function Osszeg(){
+		var x = document.form1.a.value*1;
+		var y = document.form1.b.value*1;
+		document.form1.osszeg.value = (x+y);
+	}
+	function Osszeg2(){
+		var x = document.form1.a.value*1;
+		var y = document.form1.b.value*1;
+		
+		document.getElementById("osszeg").innerHTML = "Összeg: "+(x+y);
+	}
+	function ujOldal(){
+		location.href = "https://google.com";
+	}
+	var ablak;
+	function ujAblak(){
+		ablak = open("uj.html");
+	}
+	function ujSzin(){
+		ablak.document.bgColor = "red";
+	}
+	function ujBezar(){
+		ablak.close();
+	}
+</script>
+</head>
+<body>
+	<input type="button" onclick="hatter('red');" value="Piros Háttér"/>
+	<input type="button" onclick="hatter('blue');" value="Kék Háttér"/>
+	<input type="button" onclick="hatter('yellow');" value="Sárga Háttér"/>
+	
+	<br/><br/>
+	<form name="form1">
+		Szám1: <input type="text" name="a"/><br/>
+		Szám2: <input type="text" name="b"/><br/>
+		Összeg: <input type="text" name="osszeg"/><br/>
+		<input type="button" value="Összead" onclick="Osszeg();"/>
+		<input type="button" value="Összead (h1)" onclick="Osszeg2();"/></br>
+	</form>
+	
+	<h1 id="osszeg"></h1>
+	
+	<br/><br/>
+	<form name="page">
+		<input type="button" value="Google" onclick="ujOldal();"/>
+	</form>
+	
+	<br/><br/>
+	<input type="button" value="Új ablak" onclick="ujAblak();"/>
+	<input type="button" value="Új ablak színe" onclick="ujSzin();"/>
+	<input type="button" value="Új ablak bezár" onclick="ujBezar();"/>
+	
+	
+</body>
+</html>
+
+
+
+
+

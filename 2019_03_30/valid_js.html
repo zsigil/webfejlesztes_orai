@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="scripts.js"></script>	
+	<style>
+	.piros{
+		color: red;
+	}
+	</style>
+</head>
+<body>
+<!--Feladat:
+	Készítünk űrlapot, amelyen egy nevet lehet megadni.
+	Mielőtt elküldenénk a feldolgozó serveroldal felé a beviteli mező--
+	tartalmát, előtte kliens-oldalon JavaScript segítségével is 
+	ellenőrizzük, hogy nem-e üres a beviteli mező! -->
+	<form name="urlap" method="post" action="validate.php" onsubmit="return Validate();">
+		<span id="Error" class="piros"></span><br/>
+		<label>
+			Név: <input type="text" name="nev"/> (Kötelező!)
+		</label><br/>
+		
+		<span id="Error2" class="piros"></span><br/>
+		<label>
+			Felhasználónév: <input type="text" name="user"/>
+			(Min. 4, Max 16 karakter!)
+		</label><br/><br/>
+		
+		<input type="submit" value="Elküldés"/>
+	</form>
+
+</body>

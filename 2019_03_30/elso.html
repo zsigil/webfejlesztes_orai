@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function Udv(Nev){
+		alert("Hello "+Nev);
+	}
+	function Koszon(){
+		//Kiolvassuk az input mezőt
+		var nev = document.form1.nev.value;
+		alert("Üdvözöllek "+nev);
+	}
+	function Osszeg(){
+		//Három alternatíva String->Int:
+		
+		//var x = +document.form2.a.value;
+		var x = document.form2.a.value*1;
+		var y = parseInt(document.form2.b.value);
+		alert("Összeg: "+(x+y));
+	}
+	function Terfogat(){
+		var R = document.form3.R.value*1;
+		var M = document.form3.M.value*1;
+		var V = M*R*R*Math.PI;
+		alert("A henger térfogata: "+V);
+	}
+	function kamatSzamol(){
+		var osszeg = document.form4.osszeg.value*1;
+		var kamat = document.form4.kamat.value*1;
+		var honap = document.form4.honap.value*1;
+		var ujosszeg = osszeg+osszeg*(kamat/100)*(honap/12);
+		
+		alert("Kamatos összeg: "+ujosszeg);
+	}
+	function fizetesSzamol(){
+		var F = document.fizetes.fizu.value*1;
+		if(F < 100000){
+			F *= 1.25;
+		}
+		alert("Új fizetés: "+F);
+	}
+	function negyzetSzamok(){
+		var i;
+		for(i=1; i<=10; i++){
+			document.write(i+"<br/>");
+		}
+	}
+	function csillagRajzol(){
+		var db = parseInt(document.csillagok.csillagokSzama.value);
+		var s = "";
+		do{
+			s += "* ";
+			db--;
+		}while(db>0);
+		alert(s);
+	}
+	function Osztalyoz(){
+		var P = document.osztalyzat.pontszam.value*1;
+		var s = "";
+		
+		switch(true){
+			case (P<=13):
+				s = "Elégtelen";
+				break;
+			case (P<=17):
+				s = "Elégséges";
+				break;
+			case (P<=23):
+				s = "Közepes";
+				break;
+			case (P<=29):
+				s = "Jó";
+				break;
+			case (P<=34):
+				s = "Jeles";
+				break;
+		}
+		alert("Érdemjegy: "+s);
+	}
+</script>
+</head>
+<body>
+	<p>Ez itt egy HTML-beli kiíratás</p>
+	<script> //Ez már JS kód lesz
+	
+	document.write("<p>Ez már JavaScript-tel lett kiírva</p>");
+	
+	</script>
+	<input type="button" onclick="Udv('Józsi');" value="Nyomj meg 1!"/>
+	<input type="button" onclick="Udv('Béla');" value="Nyomj meg 2!"/>
+	
+	<br/><br/>
+	<form name="form1">
+		<input type="text" name="nev"/>
+		<input type="button" onclick="Koszon();" value="Köszön!"/>
+	</form>
+	
+	<br/><br/>
+	<!--Két szám összeadása-->
+	<form name="form2">
+		szám1: <input type="text" name="a"/><br/>
+		szám2: <input type="text" name="b"/><br/>
+		<input type="button" onclick="Osszeg();" value="Összead!"/>
+	</form>
+	
+	<br/><br/>
+	<!--Henger térfogata -->
+	<form name="form3">
+		Sugár <input type="text" name="R"/><br/>
+		Magasság <input type="text" name="M"/><br/>
+		<input type="button" onclick="Terfogat();" value="Számol!"/>
+	</form>
+	
+	<br/><br/>
+	<!--Kamat számoló program -->
+	<form name="form4">
+		Összeg (Ft): <input type="text" name="osszeg"/><br/>
+		Kamat (%): <input type="text" name="kamat"/><br/>
+		Futamidő (hónap): <input type="text" name="honap"/><br/>
+		<input type="button" onclick="kamatSzamol();" value="Számol!"/>
+	</form>
+	
+	<br/><br/>
+	<!--Elágazás JS-ben -->
+	<form name="fizetes">
+		Fizetés: <input type="text" name="fizu"/><br/>
+		<input type="button" onclick="fizetesSzamol();" value="Fizetés"/>
+	</form>
+	
+	<br/><br/>
+	<!-- Írjuk ki ciklus segítségével az első 10 szám négyzetét -->
+	<form name="negyzet">
+		<input type="button" onclick="negyzetSzamok();" value="NégyzetSzámok"/>
+	</form>
+	
+	<!-- Beviteli mezőben kérjünk be egy egész számot, majd
+		felugró ablakban ennyi db * karaktert írjunk ki!
+		Készítsük el for, while, illetve do-while ciklussal is! -->
+	<br/><br/>
+	<form name="csillagok">
+		<input type="text" name="csillagokSzama"/><br/>
+		<input type="button" onclick="csillagRajzol();" value="Rajzol"/>
+	</form>
+	
+	<br/><br/>
+	<!-- Osztályzat megállapítás pont alapján -->
+	<form name="osztalyzat">
+		<input type="text" name="pontszam"/><br/>
+		<input type="button" onclick="Osztalyoz();" value="Érdemjegy"/>
+	</form>
+	
+</body>
+</html>
+
+
+
+
+

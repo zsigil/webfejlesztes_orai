@@ -1,0 +1,7 @@
+create table nyilvantartas(
+id int primary key AUTO_INCREMENT,
+nev varchar(50) not null,
+helyseg varchar(50),
+gondozo varchar(50)
+);
+

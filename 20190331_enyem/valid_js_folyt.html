@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="myscript.js"></script>
+		<style>
+			.piros{
+			color:red;
+			}
+			
+			#doboz, #doboz2, #doboz3{
+				width: 300px;
+				height: 200px;
+				background-color: Tomato;
+				color: white;
+				border : 3px solid blue;
+			}
+		</style>
+	</head>
+
+
+	<body>
+			<form name="urlap" method="post" action="validate.php"  onsubmit="return Validate();">
+			<span id="Error" class="piros"></span>
+			
+				Név: <input type="text" name="nev" onblur="validName();" /><br/><br/>
+				
+				<span id="Error2" class="piros"></span>
+				
+				Felhasználónév: <input type="text" onblur="validUser();" name="user" />
+				
+				<input type="submit" value="beküld" />
+			
+			</form>
+<br/><br/>
+			<div id="doboz" onmouseover="akcio();">
+			<h2>KEDVEZMÉNY</h2>
+			<p id="kupon"></p>
+			</div>
+		<br/><br/>	
+			
+			<div id="doboz2" onclick="idiota();">
+			<h2>Számolósdi</h2>
+			<p id="katt"></p>
+			</div>
+			
+			<div id="doboz3" onclick="nullazz();">
+			
+			</div>
+		<script>
+
+		</script>
+	</body>
+</html>
